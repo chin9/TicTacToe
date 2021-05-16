@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+
+header{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 65px;
+    color: rgb(182, 212, 203);
+    text-shadow: 5px 1px slateblue;
+    text-align: center;
+}
+
+body{
+    display: block;
+
+}
+
+.board{
+    height: 40vh;
+    width: 40vh;
+
+    position: relative;
+    top: 40px;
+
+    left: 50%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    border: 2px black solid;
+}
+
+.grid{
+    border: 2px black solid;
+}
+
