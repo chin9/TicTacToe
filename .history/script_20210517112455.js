@@ -86,19 +86,19 @@ const player = (sign, name) => {
     var marking = sign;
     var name0 = name;
 
-    return {marking, name0};
+    function getName() {
+        return name0;
+    }
+
+    return {marking, name0, getName};
 }
 
 const name1 = prompt('Player 1: Enter your name: ');
-const name2 = prompt('Player 2: Enter your name: ');
 
-const player1 = player('O', name1);
-const player2 = player('X', name2);
+const player1 = player('O');
+const player2 = player('X');
 
 var activePlayer = player1;
-
-
-document.getElementById('status').textContent = `${player1.name0}'s turn`;
 
 //DISPLAY CONTROLLER
 const displayController = (() => {
@@ -107,17 +107,17 @@ const displayController = (() => {
 
     function changeMessage() {
         if (activePlayer == player1) {
-        display.textContent = `${player1.name0}'s turn`;
+        display.textContent = 'Player 1\'s turn';
         } else {
-        display.textContent = `${player2.name0}'s turn`;
+        display.textContent = 'Player 2\'s turn';
         }  
     }
 
     function playerOneWins() {
-        display.textContent = `${player1.name0} wins!`;
+        display.textContent = 'Player 1 wins!';
     }
     function playerTwoWins() {
-        display.textContent = `${player2.name0} wins!`;
+        display.textContent = 'Player 2 wins!';
     }
 
     function tie() {
@@ -165,7 +165,6 @@ function addMarking(event) {
     }
 }
 
-//ADD LISTENERS TO EACH GRID
 const grids = [...document.getElementsByClassName('grid')];
 
 grids.forEach(grid => {
@@ -174,22 +173,6 @@ grids.forEach(grid => {
         addMarking(event);
     }
 )
-})
-
-//ADD LISTENER TO RESTART BUTTON
-function restartGame() {
-    for (let i = 0; i < 9; i++) {
-        gameboard.add(i, 0);
-    }
-
-    gameboard.renderBoard();
-    activePlayer = player1;
-    displayController.changeMessage();
-}
-
-const restart = document.getElementById('restart');
-restart.addEventListener('click', function(){
-    restartGame();
 })
 
 

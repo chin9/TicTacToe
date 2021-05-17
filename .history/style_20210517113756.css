@@ -69,7 +69,5 @@ body{
 .restart:hover{
     cursor: pointer; 
     background-color: rgb(255, 251, 0);
-    color: black;
-
 
 }

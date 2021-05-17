@@ -177,19 +177,14 @@ grids.forEach(grid => {
 })
 
 //ADD LISTENER TO RESTART BUTTON
-function restartGame() {
+const restart = document.getElementById('restart');
+restart.addEventListener('click', function(){
     for (let i = 0; i < 9; i++) {
         gameboard.add(i, 0);
     }
 
     gameboard.renderBoard();
     activePlayer = player1;
-    displayController.changeMessage();
-}
-
-const restart = document.getElementById('restart');
-restart.addEventListener('click', function(){
-    restartGame();
 })
 
 

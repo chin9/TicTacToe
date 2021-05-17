@@ -97,9 +97,6 @@ const player2 = player('X', name2);
 
 var activePlayer = player1;
 
-
-document.getElementById('status').textContent = `${player1.name0}'s turn`;
-
 //DISPLAY CONTROLLER
 const displayController = (() => {
     
@@ -114,10 +111,10 @@ const displayController = (() => {
     }
 
     function playerOneWins() {
-        display.textContent = `${player1.name0} wins!`;
+        display.textContent = 'Player 1 wins!';
     }
     function playerTwoWins() {
-        display.textContent = `${player2.name0} wins!`;
+        display.textContent = 'Player 2 wins!';
     }
 
     function tie() {
@@ -165,7 +162,6 @@ function addMarking(event) {
     }
 }
 
-//ADD LISTENERS TO EACH GRID
 const grids = [...document.getElementsByClassName('grid')];
 
 grids.forEach(grid => {
@@ -174,22 +170,6 @@ grids.forEach(grid => {
         addMarking(event);
     }
 )
-})
-
-//ADD LISTENER TO RESTART BUTTON
-function restartGame() {
-    for (let i = 0; i < 9; i++) {
-        gameboard.add(i, 0);
-    }
-
-    gameboard.renderBoard();
-    activePlayer = player1;
-    displayController.changeMessage();
-}
-
-const restart = document.getElementById('restart');
-restart.addEventListener('click', function(){
-    restartGame();
 })
 
 

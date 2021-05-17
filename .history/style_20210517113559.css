@@ -61,15 +61,5 @@ body{
 
     background-color: rosybrown;
     box-shadow: 3px 3px rgb(90, 90, 241);
-
-    font-family: 'PT Sans', sans-serif;
-    color: white;
 }
 
-.restart:hover{
-    cursor: pointer; 
-    background-color: rgb(255, 251, 0);
-    color: black;
-
-
-}
